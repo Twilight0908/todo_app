@@ -20,7 +20,7 @@ export default function TodoList() {
                 id: uuidV4(),
                 name: todoName,
                 priority: priority,
-                complete: false
+                completed: false
             })
         )
 
@@ -42,7 +42,8 @@ export default function TodoList() {
                 {/*<Todo name='Learn React' prioriry='High'/>
                 <Todo name='Learn Redux' prioriry='Medium'/>
                 <Todo name='Learn JavaScript' prioriry='Low'/>*/}
-                {todoList.map(todo => <Todo key={todo.id} name={todo.name} prioriry={todo.priority}/>)}
+                {todoList.map(todo => <Todo id={todo.id} key={todo.id} name={todo.name} prioriry={todo.priority}
+                                            completed={todo.completed}/>)}
             </Col>
             <Col span={24}>
                 <Input.Group style={{display: 'flex'}} compact>
